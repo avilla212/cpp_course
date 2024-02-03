@@ -59,6 +59,7 @@ int main()
     }
 
     std::cout << "The decimal equivalent of " << binaryInput << " is " << base << std::endl;
+    std::cout << "The decimal equivalent of " << binaryInput << " is " << binaryToDecimal << std::endl;
 
     
     return 0;
