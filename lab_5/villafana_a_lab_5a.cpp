@@ -1,70 +1,52 @@
-#include <iomanip>
 #include <iostream>
+#include <iomanip>
+using namespace std;
 
-// function prototypes
-void getUsrInput(double &pounds, double &ounces);
-void convertToMetric(double pounds, double ounces, double &kilograms, double &grams);
-void displayOutput(double pounds, double ounces, double kilograms, double grams);
+// Function prototypes
+void getUserInput(double &pounds, double &ounces);
+void convertToKilogramsAndGrams(double pounds, double ounces, double &kilograms, double &grams);
+void outputResult(double kilograms, double grams);
 
-int main()
-{
-    /*
-        Write a program that will asks the user for the weight of an item in pounds 
-        and ounces and outputs the equivalent weight in kilograms and grams.
-    */
+int main() {
+    double pounds, ounces;    // Variables for input
+    double kilograms, grams;  // Variables for output
+    char continueInput;       // Variable to control the loop
 
-   // create all variables in main and then use pass by reference with our functions
-   
-    double pounds = 0;
-    double ounces = 0;
-    double kilograms = 0;
-    double grams = 0;
+    do {
+        getUserInput(pounds, ounces);    // Call function to get user input
+        convertToKilogramsAndGrams(pounds, ounces, kilograms, grams);  // Convert to kg and g
+        outputResult(kilograms, grams);  // Display the result
 
-    std::cout << "Pounds before function call: " << pounds << "\n";
-    std::cout << "Ounces before function call: " << ounces << "\n";
-    std::cout << "Kilograms before function call: " << kilograms << "\n";
-    std::cout << "Grams before function call: " << grams << "\n";
-
-    getUsrInput(pounds, ounces);
-    convertToMetric(pounds, ounces, kilograms, grams);
-    displayOutput(pounds, ounces, kilograms, grams);
-
-    std::cout << "Pounds after function call: " << pounds << "\n";
-    std::cout << "Ounces after function call: " << ounces << "\n";
-    std::cout << "Kilograms after function call: " << kilograms << "\n";
-    std::cout << "Grams after function call: " << grams << "\n";
+        // Ask user if they want to convert another weight
+        cout << "Do you want to convert another weight? (Y/N): ";
+        cin >> continueInput;
+    } while (continueInput == 'Y' || continueInput == 'y');
 
     return 0;
 }
 
-void getUsrInput(double &pounds, double &ounces)
-{
-    std::cout << "Enter the weight of the item in pounds: ";
-    std::cin >> pounds;
-
-    std::cout << "Enter the weight of the item in ounces: ";
-    std::cin >> ounces;
-
-    return;
+// Function to gather user input
+void getUserInput(double &pounds, double &ounces) {
+    cout << "Enter the weight of the item in pounds and ounces.\n";
+    cout << "Pounds: ";
+    cin >> pounds;
+    cout << "Ounces: ";
+    cin >> ounces;
 }
 
-void convertToMetric(double pounds, double ounces, double &kilograms, double &grams)
-{
-    // 1 pound = 0.453592 kilograms
-    // 1 ounce = 0.0283495 kilograms
-    // 1 kilogram = 1000 grams
-
-    kilograms = pounds * 0.453592 + ounces * 0.0283495;
-    grams = kilograms * 1000;
-
-    return;
+// Function to calculate the conversion
+void convertToKilogramsAndGrams(double pounds, double ounces, double &kilograms, double &grams) {
+    const double poundsToKilograms = 0.453592;
+    const double ouncesToKilograms = 0.0283495;
+    // First convert pounds and ounces to kilograms
+    kilograms = pounds * poundsToKilograms + ounces * ouncesToKilograms;
+    // Then convert kilograms to grams for the grams part
+    grams = (kilograms - static_cast<int>(kilograms)) * 1000;
+    kilograms = static_cast<int>(kilograms);  // Keep only the integer part of kilograms
 }
 
-void displayOutput(double pounds, double ounces, double kilograms, double grams)
-{
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Weight in kilograms: " << kilograms << " kg\n";
-    std::cout << "Weight in grams: " << grams << " g\n";
-
-    return;
+// Function to output the result
+void outputResult(double kilograms, double grams) {
+    
+    cout << "The equivalent weight is " << kilograms << " kilograms and " << fixed << setprecision(2) << grams << " grams.\n";
 }

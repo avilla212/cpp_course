@@ -1,16 +1,9 @@
 #include <iostream>
-using namespace std;
-
-void print();
+#include <iomanip>
+#include <cmath> // for pow function
 
 int main()
 {
 
-    print();
     return 0;
-}
-
-void print()
-{
-    cout << "Testing 1 2 3 ";
 }
