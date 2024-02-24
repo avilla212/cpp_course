@@ -4,7 +4,8 @@
 
 using namespace std;
 
-// Use an array to find the prime numbers from  2 to 300
+void markNonPrimes(array<bool,300>& primes);
+void displayPrimes(const array<bool,300>& primes); // Const since array is read only
 
 int main(){
 
@@ -13,38 +14,39 @@ int main(){
     array<bool, 300> primes;
     primes.fill(true); // Could also use a for loop to fill the array with true
 
-    // Start looping from 2 to 300
-    for (int i = 2; i < primes.size();i++)
-    {
-        // If the number is prime, set all multiples to false
-        if (primes[i])
-        {
-            // Set all multiples of i to false
-            for (int j = 2; i * j < primes.size(); j++)
-            {
+    markNonPrimes(primes);
+    displayPrimes(primes);
+
+    return 0;
+}
+
+// Function to loop through array from 2-300
+void markNonPrimes(array<bool,300>& primes){
+
+    for (int i =2; i < primes.size();i++){
+        if (primes[i]){
+            for (int j = 2; i * j < primes.size(); j++){
                 primes[i * j] = false;
             }
         }
     }
+}
 
-    // Display the prime numbers    
-    cout << "Prime numbers from 2 to 300 are: " << endl;
-    cout << endl;
-    for (int i = 2; i < primes.size(); i++)
-    {
-        if (primes[i])
-        {
-            // Format the output to have 5 numbers per line
-            cout << setw(5) << i << " ";
-            primeCount++;
+// Const since array is read only
+void displayPrimes(const array<bool,300>& primes){
+    
+    int count {0};
 
-            // If 5 numbers have been printed, start a new line
-            if (primeCount % 5 == 0)
-            {
+    cout << "Primes from 2 to 300 are: \n" << endl; 
+    for (int i = 2; i < primes.size(); i ++){
+        if (primes[i]){
+            cout << setw(5) << i;
+            count ++;
+            
+            // Keeping 5 numbers per line
+            if (count % 5 == 0){
                 cout << endl;
             }
         }
     }
-
-    return 0;
 }
