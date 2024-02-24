@@ -1,48 +1,89 @@
-/*
-Write a program in pseudocode that calculates the average of any number of positive numbers. Here are the requirements:
-The program runs as long as the number entered by the user is not 0.
-When a 0 is entered, the program terminates and displays the average of all the numbers entered.
-When each number is entered, you must validate it to make sure the number not negative. We only allow averaging positive numbers.
-
-*/
-
 #include <iostream>
+#include <algorithm>
+#include <array>
 using namespace std;
+
+void newLine();
+void convertToUppercase(char* s);
+void printArray(int arr[], int size);
 
 int main()
 {
 
-    int number;
-    int sum = 0;
-    int count = 0;
+    char name[] = "John";
 
-    cout << "Enter a number: ";
-    cin >> number;
+    cout << "Before: " << name << endl;
+    convertToUppercase(name);
+    cout << "After: " << name << endl;
 
-    while (number != 0)
+    cout << "\nBuilt in arrays vs Array class" << endl;
+    cout << "---------------------------------" << endl;
+
+    // Built in arrays
+    int v[5] {0, 1, 2, 3, 4};
+
+    cout << "Built in array: " << endl;
+    printArray(v, 5);
+    cout << endl;
+
+    // Array class
+    array<int,5> v2 {2,3,1,1,4};
+    cout << "\nArray class: " << endl;
+
+    // sort the array
+    cout << "Before sorting v2 array class: " << endl;
+    for (int i = 0; i < v2.size(); i++)
     {
-        if (number < 0)
-        {
-            cout << "Invalid number. Please enter a positive number: ";
-            cin >> number;
-        }
-        else
-        {
-            sum += number;
-            count++;
-            cout << "Enter a number: ";
-            cin >> number;
-        }
+        cout << v2[i] << " ";
     }
 
-    if (count > 0)
+    newLine();
+
+    sort(v2.begin(), v2.end());
+
+    cout << "\nAfter sorting v2 array class: " << endl;
+    for (int i = 0; i < v2.size(); i++)
     {
-        cout << "The average of the numbers is: " << (double)sum / count << endl;
+        cout << v2[i] << " ";
     }
-    else
-    {
-        cout << "No numbers were entered." << endl;
-    }
+
+    newLine();  
+
+    int v3[5] {1,2,3,4,5};
+    
+    // Both point to memory location of the first element   
+    int* v3Ptr2 {v3};
+    int* v3Ptr {&v3[0]};
+
+    cout << "Memory location of first element" << endl;
+    cout << "v3Ptr2: " << v3Ptr2 << " and v3Ptr: " << v3Ptr << endl;
+
+    newLine();
+
+    cout << "Values of the pointers" << endl;
+    cout << "v3Ptr2: " << *v3Ptr2 << " and v3Ptr: " << *v3Ptr << endl;
+
 
     return 0;
 }
+
+void convertToUppercase(char* s){
+
+    while (*s != '\0'){
+        *s = toupper(*s);
+        s++;
+    }
+}
+
+// Function to print arrays
+void printArray(int arr[], int size){
+    for (int i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
+}
+
+void newLine(){
+    cout << endl;
+}
+
+
