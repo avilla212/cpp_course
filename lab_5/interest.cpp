@@ -13,7 +13,7 @@ int main() {
    double rate {0.05};         // interest rate
 
    cout << "Initial principal: " << principal << endl;
-   cout << "    Interest rate:    " << rate << endl;
+   cout << "    Interest rate:  " << rate << endl;
 
    // display headers
    cout << "\nYear" << setw(20) << "Amount on deposit" << endl;
@@ -37,7 +37,7 @@ int main() {
       cout << "Initial principal: " << principal << endl;
 
       // move rate to the left
-      cout << "    Interest rate:    " << rate << endl;
+      cout << "    Interest rate:  " << rate << endl;
 
       // display headers
       cout << "\nYear" << setw(20) << "Amount on deposit" << endl;
