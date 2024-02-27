@@ -63,6 +63,12 @@ int main()
     cout << "Values of the pointers" << endl;
     cout << "v3Ptr2: " << *v3Ptr2 << " and v3Ptr: " << *v3Ptr << endl;
 
+    array<int,5> v4 {1,2,3,4,5};
+
+    cout << "Memory location of first element of array class" << endl;
+    cout << "v4: " << &v4[0] << endl;
+
+
 
     return 0;
 }
