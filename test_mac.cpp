@@ -9,14 +9,14 @@ double calculatePower(double base, int exponent) {
         result *= base;
     }
     return result;
-}
+}   
 
 int main() {
     double base;
     int exponent;
 
     // Loop until the user enters 0 for the base
-    while (true) {
+     while (true) {
         cout << "Enter the base (or 0 to exit): ";
         cin >> base;
 
