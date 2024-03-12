@@ -29,12 +29,17 @@ int main() {
 
 // Function to display rates for residential and business customers
 void displayRates() {
-    cout << "Rates:\n";
-    cout << left << setw(30) << "Residential:" << setw(30) << "Business:" << endl;
-    cout << left << setw(30) << "1. Bill Processing fee (flat rate): $4.50" << setw(30) << "1. Bill Processing fee (flat rate): $15.00" << endl;
-    cout << left << setw(30) << "2. Internet connectivity (flat rate): $70.99" << setw(30) << "2. Internet connectivity, pre-paid data: $75.00 for up to 10TB of data, $5.00 for each additional 1TB over 10" << endl;
-    cout << left << setw(30) << "3. Premium cable channels (flat rate): $7.50" << setw(30) << "3. Premium cable channels (flat rate): $10.00 per channel" << endl;
+    cout << left << setw(30) << "Residential:" << setw(30) << endl;
+    cout << left << setw(30) << "1. Bill Processing fee (flat rate): $4.50" << setw(30) << endl;
+    cout << left << setw(30) << "2. Internet connectivity (flat rate): $70.99" << setw(30) << endl;
+    cout << left << setw(30) << "3. Premium cable channels (flat rate): $7.50" << setw(30) << endl;
+
     cout << endl;
+
+    cout << "Business: " << endl;
+    cout << "1. Bill Processing fee (flat rate): $15.00" << endl;
+    cout << "2. Internet connectivity, pre-paid data: $75.00 for up to 10TB of data, $5.00 for each additional 1TB over 10" << endl;
+    cout << "3. Premium cable channels (flat rate): $10.00 per channel" << endl;
 }
 
 // Function to get account information from the user
