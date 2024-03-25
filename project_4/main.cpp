@@ -1,35 +1,43 @@
 #include <iostream>
-#include <ctime>
-#include <iomanip>
+#include <vector>
+#include <chrono>
+#include <cmath>
 
 using namespace std;
+using namespace std::chrono;
 
-bool isPrime(int n) {
-    if (n <= 1) {
-        return false;
-    }
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0) {
-            return false;
+void sieveOfEratosthenes(long long n) {
+    vector<bool> prime(n + 1, true);
+    prime[0] = prime[1] = false;
+
+    for (long long p = 2; p * p <= n; p++) {
+        if (prime[p]) {
+            for (long long i = p * p; i <= n; i += p)
+                prime[i] = false;
         }
     }
-    return true;
+
+    long long count = 0; // Use count to limit output and check performance
+    for (long long p = 2; p <= n; p++) {
+        if (prime[p]) {
+            ++count; // Count primes instead of printing them all
+            // Uncomment below to print prime numbers, beware it might freeze your console for large n
+            // cout << p << " ";
+        }
+    }
+    cout << "Total prime numbers up to " << n << ": " << count << endl;
 }
 
 int main() {
-    clock_t start, end;
-    start = clock(); // Start timing
+    long long n = 300000000; // WARNING: Very large number, adjust accordingly
 
-    cout << "Prime numbers between 1 and 300 are: " << endl;
-    for(int num = 1; num <= 30000; num++) {
-        if (isPrime(num)) {
-            cout << num << " ";
-        }
-    }
+    auto start = high_resolution_clock::now();
+    sieveOfEratosthenes(n);
+    auto stop = high_resolution_clock::now();
 
-    end = clock(); // End timing
-    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-    cout << "\nTime taken by program is : " << fixed << time_taken << setprecision(5);
-    cout << " secs " << endl;
+    auto duration = duration_cast<seconds>(stop - start);
+
+    cout << "Time taken: " << duration.count() << " seconds\n";
+
     return 0;
 }
