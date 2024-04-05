@@ -41,19 +41,28 @@ int main(){
     d.fetch();
     std::cout << "Balls fetched: " << d.getBallsFetched() << std::endl;
 
+    // Call the bark method for the derived class object
+    std::cout << "Calling bark method for Dog(derived) object" << std::endl;
+    d.bark();
+    std::cout << std::endl;
+
     return 0;
 }
 
 void displayAnimal(Animal a){
+
     std::cout << "Name: " << a.getName() << std::endl;
     std::cout << "Age: " << a.getAge() << std::endl;
     std::cout << "Weight: " << a.getWeight() << std::endl;
+
 }
 
 void displayDog(Dog d){
+
     std::cout << "Name: " << d.getName() << std::endl;
     std::cout << "Age: " << d.getAge() << std::endl;
     std::cout << "Weight: " << d.getWeight() << std::endl;
     std::cout << "Breed: " << d.getBreed() << std::endl;
+    
 }
 

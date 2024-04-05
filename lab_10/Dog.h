@@ -8,6 +8,7 @@
 
 class Dog : public Animal{
     public:
+    
         Dog(std::string n, int a, double weight, std::string breed) : Animal(n, a, weight), breed(breed) {}
 
         // Setters
@@ -34,6 +35,7 @@ class Dog : public Animal{
         }
 
     private:
+
         std::string breed;
         int ballsFetched {0};
 };

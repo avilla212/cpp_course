@@ -6,6 +6,7 @@
 
 class Animal{
     public:
+
         Animal(std::string n, int a, double weight) : name(n), age(a), weight(weight) {}    
 
         // Setters
@@ -27,12 +28,15 @@ class Animal{
         }
 
         void workout(){
+
             std::cout << "Animal is working out" << std::endl;
             weight -= 0.5;
+
         }
 
 
     private:
+    
         std::string name;
         int age;
         double weight;

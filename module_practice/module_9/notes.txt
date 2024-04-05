@@ -1,0 +1,1 @@
+To define our own version of an operator, we need to write a non-static member function of the class
