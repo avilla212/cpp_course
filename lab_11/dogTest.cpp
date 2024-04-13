@@ -23,7 +23,6 @@ int main() {
    for (Dog* dogPtr : pound) {
       dogPtr->bark();
       dogPtr->eat();
-
    }
 
    // For loop for dynamic casting
@@ -46,5 +45,7 @@ int main() {
    }
    
    cout << endl;
+
+   return 0;
 }
 

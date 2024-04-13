@@ -1,0 +1,43 @@
+Problem 1: Validating input
+Enter your age: -1
+Enter your age: 101
+Enter your age: 100
+Your age is: 100
+
+Problem 2: Multiplier function
+10
+12
+11.96
+
+Problem 3: Find the max
+6.2
+-4
+a
+
+Problem 4: Compare strings
+-1
+0
+1
+-1
+0
+
+Problem 5: Palindrome Checker
+1
+0
+1
+
+Problem 6: Number Analysis
+Sum: 55
+Average: 5.5
+
+Problem 7: Print Vector
+Elements in the vector: [1.5, 2.6, 3.7]
+
+Problem: 8: Add Vectors
+Elements in the vector: [0, 0, 0]
+Elements in the vector: [4, 4, 4]
+
+Problem 9: Swap
+Elements in the vector: [1, 2, 5, 4, 3]
+
+https://replit.com/@alexcookie19986/Exam2#output.txt
