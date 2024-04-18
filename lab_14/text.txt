@@ -1,0 +1,10 @@
+CREATE CONTAINER AND ITERATOR
+
+- gradebook will hold grades from students
+- printGrades() uses an iterator that prints values in a vector
+
+- double vector named exam1 
+    - user input doubles till -1 is entered
+
+- int vector quiz
+    - user input ints till -1 is entered
