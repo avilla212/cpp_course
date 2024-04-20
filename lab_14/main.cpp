@@ -1,10 +1,8 @@
 #include <iostream>
 #include <vector>
 
-void printGrades(const std::vector<int> &quiz);
-void printGrades(const std::vector<double> &exam);
+template <typename T> void printGrades(const vector<T> &exam);
 
-using std::vector;
 using namespace std;
 
 int main(){
@@ -22,14 +20,14 @@ int main(){
         }
     }
 
+    // Print exam grades
     printGrades(exam1);
 
     return 0;
 }
 
-void printGrades(const std::vector<double> &exam){
+template <typename T> void printGrades(const vector<T> &exam){
     cout << "Exam grades contain: ";
-
     for (auto i = exam.begin(); i != exam.end(); i++){
         cout << *i << " ";
     }
