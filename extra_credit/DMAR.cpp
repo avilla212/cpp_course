@@ -1,11 +1,4 @@
 #include <iostream>
-#include <cmath>
-
-// Prototype to check if memory is deallocated
-void checkMemoryDeallocation(int *ptr);
-void checkMemoryDeallocation(double *ptr);
-void checkMemoryDeallocation(const double *ptr);
-
 
 int main(){
 
