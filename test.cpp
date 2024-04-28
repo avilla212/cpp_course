@@ -11,7 +11,7 @@ double stable_sort_time(vector<int> &v);
 
 template <typename T> void fill_vector(vector<T> &v);
 template <typename T> void fill_vector(vector<T> &v);
-template <typename T> void insertion_sort(vector<T> &v);
+template <typename T> double insertion_sort(vector<T> &v);
 
 // Constants
 const int SIZE_1 (100000);
@@ -60,7 +60,7 @@ template <typename T> void fill_vector(vector<T> &v){
 }
 
 // Function for insertion sort algorithm on vector
-template <typename T> void insertion_sort(vector<T> &v){
+template <typename T> double insertion_sort(vector<T> &v){
 
     clock_t start,end;
     start = clock();
