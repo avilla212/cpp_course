@@ -63,7 +63,9 @@
         "concepts": "cpp",
         "algorithm": "cpp",
         "xiosbase": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "xstring": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang"
 }
