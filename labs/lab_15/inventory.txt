@@ -1,0 +1,4 @@
+1 toy 8
+1 box 0
+1010 chair 9
+901 desk 2
